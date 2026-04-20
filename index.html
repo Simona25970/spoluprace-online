@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+     <title>Spolupráce online</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="img/favicon.ico">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="others/grid.css">
+     <link rel="stylesheet" href="css/queries.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<script>
+
+     const form = document.getElementById("contact-form");
+     const message = document.getElementById("form-message");
+
+     form.addEventListener("submit", async function (e) {
+
+          e.preventDefault();
+
+          message.innerHTML = "Odesílám zprávu...";
+
+          const data = new FormData(form);
+
+          const response = await fetch(form.action, {
+               method: "POST",
+               body: data,
+               headers: {
+                    'Accept': 'application/json'
+               }
+          });
+
+          if (response.ok) {
+               message.innerHTML = "✅ Děkuji za zprávu. Ozvu se vám co nejdříve.";
+               form.reset();
+          } else {
+               message.innerHTML = "❌ Odeslání se nepovedlo. Zkuste to prosím znovu.";
+          }
+
+     });
+
+</script>
+
+<body>
+     <header>
+          <nav class="menu">
+               <!-- tlačítko pro mobilní menu -->
+               <div class="mobile-nav-back"></div>
+               <div class="mobile-nav-icon">
+                    <img src="img/hamburgerMenu.png" alt="Menu" class="jq--nav-icon">
+               </div>
+
+               <ul class="main-nav jq--main-nav">
+                    <li><a href="#" class="jq--scroll-outset">Úvod</a></li>
+                    <li><a href="jak-zacit.html">Jak začít</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="#" class="jq--scroll-contact">Kontakt</a></li>
+               </ul>
+          </nav>
+
+
+          <section class="hero">
+               <div class="header-text">
+                    <h1>podnikání z domu / možnost pracovat odkudkoliv a kdykoliv</h1>
+                    <a href="#" class="btn btn-full jq--scroll-about-us">O nás</a>
+               </div>
+          </section>
+     </header>
+
+     <hr class="fancy-hr">
+
+     <main>
+          <section class="outset column jq--outset">
+               <marquee behavior="slide" direction="right">
+                    <h2>Úvod</h2>
+               </marquee>
+          </section>
+
+
+          <section class="container">
+               <div class="outset-box">
+                    <div class="outset-text">
+                         <p>Chci Vám představit, jak pracovat z pohodlí domova, být pánem svého času a splnit si své
+                              sny.
+                         </p>
+                         <p> Potřebujete jen počítač,
+                              notebook
+                              nebo telefon a chuť něco změnit.</p>
+                    </div>
+
+                    <div class="outset-link-text">
+                         <p>• pracujte z pohodlí domova v čase, který vám vyhovuje</p>
+                         <p>• bez rizika</p>
+                         <p>• vstupní náklady jsou minimální</p>
+                         <p>• žádné směny</p>
+                         <p>• žádný šéf za zády</p>
+                         <p>• ZAPOJTE SE DO TÝMU GLOBAL3000</p>
+                    </div>
+               </div>
+          </section>
+
+
+          <section class="container">
+               <div class="outset-box">
+                    <div class="concept">
+                         <p>Výhody podnikání v síťovém marketingu oproti tradičním byznysovým modelům,
+                              je koncept network marketingu postaven tak, aby byl pro zájemce co
+                              nejjednodušší:</p>
+                    </div>
+
+                    <div class="outset-link-text">
+                         <p>> Časová flexibilita (možnost budovat podnikání při škole nebo zaměstnání)</p>
+                         <p>> Sami si můžete vybrat jakou měrou se do podnikání zapojíte</p>
+                         <p>> Jednoduchá administrativa</p>
+                         <p>> Nepotřebujete žádné odborné vzdělání</p>
+                         <p>> Vyřešená logistická a administrativní infrastruktura</p>
+                         <p>> Možnost vybudovat velké bohatství (pokud máte takové ambice)</p>
+                         <p>> Možnost získání pasivního příjmu (v krátké době v poměru ke klasickému podnikání)</p>
+                         <p>> Možnost budovat podnikání ve více zemích světa</p>
+                         <p>> Propracovaný vzdělávací systém, který Vás naučí jak vybudovat vaše podnikání</p>
+                         <p>(nabízejí
+                              jen ty nejlepší mlm společnosti)</p>
+                         <p>> Atraktivní systém odměňování a bonusů (nabízejí jen ty nejlepší mlm společnosti)</p>
+                         <p>> Podpůrný tým</p>
+                         <p>> Míra podnikatelského rizika je téměř nulová</p>
+                    </div>
+               </div>
+          </section>
+
+          <hr class="fancy-hr">
+
+          <section class="about-us jq--about-us">
+               <div class="container">
+                    <h2>O nás</h2>
+               </div>
+          </section>
+
+
+          <section class="about-us">
+               <div class="container">
+                    <img src="img/GLOBALuspech.jpg" alt="">
+               </div>
+          </section>
+
+          <section>
+               <div class="outset-box container">
+                    <div class="project-text">
+                         <p>Projekt Klubu GLOBAL3000 vznikl v roce 1999.
+                              Jeho cílem je dodávat lidem velice kvalitní české produkty denní spotřeby
+                              jako jsou instantní nápoje, domácí úpravy vody,
+                              doplňky výživy pro zdraví,
+                              přípravky na podporu snižování hmotnosti a další.</p>
+                    </div>
+
+                    <div class="project-text">
+                         <p>Nabízíme Vám příležitost k vlastnímu podnikání,
+                              prostřednictvím něhož si můžete splnit své cíle a
+                              sny s maximální podporou našeho projektu.
+                              Naším cílem je dělat lidi kolem nás šťastnější a spokojenější.</p>
+                    </div>
+               </div>
+
+               <div class="outset-box container">
+                    <div class="text-about">
+                         <p>Produkty určené pro pitný režim (nápoje značky ILLA) a
+                              oblasti péče o zdraví:</p>
+                         <p><strong>
+                                   <p>• Vitavláknina</p>
+                                   <p>• Prokloub</p>
+                                   <p>• Bioaktiv</p>
+                                   <p>• Vitarutin</p>
+                                   <p>• VitaChlorella</p>
+                                   <p>• Ginkgo Global</p>
+                                   <p>• Vita + C atd.
+                              </strong></p>
+
+                         <p class="text-about"> Jsou výsledkem práce společnosti, která již od počátku svého vzniku
+                              úzce
+                              spolupracovala s Výzkumným ústavem potravinářským (VÚPP).
+                              Společnost ve svých výrobcích využívá celé řady vlastních,
+                              patentově chráněných postupů. Při vlastní výrobě jsou dále též využívány vlastní
+                              unikátní
+                              technologické postupy.</p>
+                    </div>
+               </div>
+               </div>
+          </section>
+
+          <hr class="fancy-hr">
+
+          <section class="contact container jq--contact">
+               <h2>Kontakt</h2>
+          </section>
+
+          <div class="img container">
+               <img src="img/kontakt.jpg" alt="">
+          </div>
+
+          <section>
+               <div class="container">
+                    <div class="info">
+                         <p class="bold">Zvažujete vedlejší příjem nebo časovou flexibilitu?</p>
+                    </div>
+
+                    <div class="comment">
+                         <p>Možná je teď ten správný čas udělat první krok...</p>
+                         <p>Stačí mi napsat pár řádků...</p>
+                    </div>
+               </div>
+          </section>
+
+          <section id="contact">
+               <div class="container">
+                    <a href="#contact" class="btn"><i class="fa-solid fa-hand-point-right"
+                              style="color: rgb(255, 212, 59);"></i>
+                         &nbsp;&nbsp;Zajímá mě tato možnost</a>
+               </div>
+
+               <i class="fa-regular fa-hand-point-down" style="color: rgb(24, 110, 110);"></i>
+          </section>
+
+
+
+
+          <div class="comment-form">
+               <p>Napište mi:</p>
+          </div>
+
+          <div class="form-title">
+               <h2>Kontaktní formulář</h2>
+          </div>
+
+
+          <div class="container">
+               <div class="informations">
+                    <section class="box">
+                         <form id="contact-form" action="https://formspree.io/f/xjgeqdar" method="post" class="box">
+                              <input type="name" name="name" placeholder="Jméno a Příjmení">
+                              <input type="email" name="email" placeholder="Váš email">
+                              <textarea name="text" placeholder="Vaše zpráva" name="message" cols="80"
+                                   rows="8"></textarea><br>
+
+                              <!-- antispam pole -->
+                              <input type="text" name="_gotcha" style="display:none">
+                              <strong><input type="submit" value="Odeslat zprávu"></strong>
+                              <div id="form-message"></div>
+
+                              <div class="protection-container">
+                                   <input type="checkbox" id="souhlas" name="podminky" value="ano" required>
+                                   <label for="souhlas">
+                                        Souhlasím se <a href="./zasady-ochrany-osobnich-udaju.html" target="_blank">
+                                             zpracováním osobních údajů</a> za účelem [vyřízení registrace].
+                                   </label>
+                              </div>
+
+                         </form>
+                    </section>
+
+
+
+                    <section class="my-contact">
+                         <div class="name">
+                              <h3>Simona Florusová</h3>
+                         </div>
+
+                         <div class="info-contact ">
+                              <div class="contact-info clearfix">
+                                   <i class="fa-solid fa-envelope"></i> <br><a
+                                        href="mailto:simonapracezdomova@seznam.cz">Email:simonapracezdomova@seznam.cz"</a>
+                              </div>
+                              <div class="contact-info clearfix">
+                                   <i class="fa-solid fa-phone"></i><br><a
+                                        href="+420773511708">Telefon:+420773511708"</a>
+                              </div>
+                              <div class="contact-info clearfix">
+                                   <i class="fa-solid fa-location-dot"></i>
+                              </div>
+                              <div class="residence">
+                                   Spodní 670/2 <br>
+                                   Brno-Bohunice <br>
+                                   62500
+                              </div>
+                         </div>
+                    </section>
+               </div>
+          </div>
+
+
+     </main>
+
+     <section>
+          <footer>
+               <div class="footer-container">
+                    <div class="footer-row">
+                         <!-- Nový blok FAQ start-->
+                         <div class="col" id="faq-section">
+                              <h4>STÁLE VÁHÁŠ?</h4>
+                              <p style="margin-bottom: 1.5rem; font-size: 15px; line-height: 1.6; color: #ccc;">Než se
+                                   pustíš do společného
+                                   projektu, mrkni na <strong>[Časté dotazy]</strong> , kde vysvětluji vše o čase,
+                                   penězích i podpoře.</p>
+
+                              <div class="faq-wrapper"> <!-- obal pro snadnou manipulaci -->
+                                   <a href="faq.html" class="faq-button">
+                                        <i class="fa-solid fa-comments"></i> <span>Časté dotazy</span> </a>
+                              </div>
+                         </div>
+                         <!-- Nový blok FAQ konec-->
+
+                         <div class="col" id="home">
+                              <img src="img/LogoHome.png" alt="" class="logo">
+                         </div>
+
+                         <div class="col" id="menu">
+                              <h4>HLAVNÍ MENU</h4>
+                              <div class="links">
+                                   <ul>
+                                        <li><a href="#" class="jq--scroll-outset">Úvod</a></li>
+                                        <li><a href="./jak-zacit.html">Jak začít</a></li>
+                                        <li><a href="./o-mne.html">O mně</a></li>
+                                        <li><a href="#" class="jq--scroll-contact">Kontakt</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                   </ul>
+                              </div>
+                         </div>
+
+                         <div class="col" id="contact">
+                              <h4>KONTAKT</h4>
+                              <div class="contact-details">
+                                   <span><i class="fa-solid fa-phone"></i></span>
+                                   <p><a href="tel:+773511708">+420 773 511 708</a></p>
+
+                                   <span><i class="fa-solid fa-envelope"></i></span>
+                                   <p><a href="mailto:simonapracezdomova@seznam.cz">simonapracezdomova@seznam.cz</a></p>
+                              </div>
+
+                              <div class="social">
+                                   <a href="https://www.facebook.com/spolupracezdomovasesimcou">
+                                        <i class="fab fa-facebook-f"></i></a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </footer>
+
+          <div class="copyrightText">
+               <p>&copy;2026 Tvorba www | Simona Florusová. Všechna práva vyhrazena.
+
+                    <a href="./zasady-ochrany-osobnich-udaju.html">• Zásady ochrany osobní údajů</a>
+                    <a href="./cookies.html">• Cookies</a>
+               </p>
+          </div>
+     </section>
+
+
+     <button id="scrollToTop" title="nahoru">
+          <i class="fa-solid fa-chevron-up"></i>
+     </button>
+
+     <div class="container">
+          <div id="cookie-bar" class="cookie-bar">
+               <p>"Tyto webové stránky používají soubory cookies 🍪, </p>
+               <p>ke zlepšení uživatelského zážitku</p>
+               <p>a zajištění základních funkcí".</p>
+               <button id="cookie-button" class="button button-cookiefull">Souhlasím</button>
+               <button id="cookie-button" class="button button-cookieempty"> <a href="./cookies.html"> Více o cookie</a>
+               </button>
+          </div>
+     </div>
+
+
+     <script src="js/script.js"></script>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
