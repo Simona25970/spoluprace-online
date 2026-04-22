@@ -159,8 +159,7 @@ header {
      text-indent: -10px;
      line-height: 2;
      border-radius: 12px;
-     border-top: 5px solid rgb(70, 148, 148);
-     border-bottom: 5px solid rgb(70, 148, 148);
+     border-left: 5px solid rgb(70, 148, 148);
 }
 
 .outset-box {
@@ -1051,7 +1050,7 @@ header {
 .aboutbox-row img {
      flex: 0 1 400px;
      max-width: 400px;
-     height: 500px;
+     height: auto;
      border-radius: 15px;
      object-fit: cover;
 }
@@ -1634,6 +1633,7 @@ details[open] summary::after {
 
 .column {
      max-width: 1140px;
+     width: 100%;
      margin: 0 auto;
 }
 

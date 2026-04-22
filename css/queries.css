@@ -516,6 +516,10 @@
           overflow-x: hidden !important;
      }
 
+     .aboutbox-row img {
+          overflow-x: hidden !important;
+     }
+
      .perfume-row .text-content p {
           font-size: medium !important;
           margin-left: 0px;
