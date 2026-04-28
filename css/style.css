@@ -149,40 +149,110 @@ header {
      text-align: center;
 }
 
-.outset-link-text {
-     display: block;
-     align-items: center;
-     padding: 25px 30px;
-     color: #096a6a;
-     background: #f9f9f9;
-     font-weight: 600;
-     text-indent: -10px;
-     line-height: 2;
-     border-radius: 12px;
-     border-left: 5px solid rgb(70, 148, 148);
-}
-
 .outset-box {
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
      align-items: stretch;
-     gap: 30px;
+     gap: 50px;
      margin: 80px 0 100px;
-     padding: 30px;
+     padding: 40px;
      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .outset-box .outset-text {
+     font-family: system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
      text-transform: uppercase;
      flex: 1 1 300px;
-     color: #000;
-     font-size: 25px;
+     color: #222;
+     font-size: 28px;
      font-weight: 600;
      line-height: 2;
 }
 
+.outset-list ul {
+     max-width: 500px;
+     margin: 15px auto;
+}
+
+.outset-list i {
+     width: 30px;
+     color: rgb(70, 148, 148);
+     margin: 10px;
+     font-size: 0.8em;
+}
+
+.list-item li {
+     display: flex;
+     justify-content: start;
+     padding: 12px 15px;
+     background: #f4f4f4;
+     border-left: 5px solid rgb(70, 148, 148);
+     /* Moje tyrkysová */
+     border-radius: 5px;
+     font-weight: 600;
+     font-size: 1.1em;
+}
+
+.clean-lister ul {
+     list-style: none;
+     padding: 20px;
+     max-width: 900px;
+     margin: 0 auto;
+     /* na dva sloupce */
+     display: grid;
+     flex-wrap: wrap;
+     grid-template-columns: repeat(2, 1fr);
+     /* rozdělí seznam na dva stejné sloupce */
+     gap: 5px 100px;
+}
+
+.clean-lister li {
+     display: flex;
+     align-items: left;
+     font-size: 1.3em;
+     color: #096a6a;
+     font-weight: bold;
+     font-style: italic;
+     padding: 22px 0;
+     margin: -10px;
+     border-bottom: 1px solid #e0e0e0;
+     text-align: center;
+     transition: 0.3s;
+}
+
+.clean-lister li i {
+     width: 30px;
+     color: rgb(70, 148, 148);
+     margin-right: 20px;
+     font-size: 0.8em;
+}
+
+.clean-lister li:last-child {
+     border-bottom: none;
+     /* Pod posledním už čára nebude */
+}
+
+.clean-lister li:nth-last-child(-n+2) {
+     border-bottom: none;
+}
+
+.clean-lister li:hover {
+     padding-left: 5px;
+     /* Seznam se při najetí lehce "pohne" vpravo */
+     color: rgb(68, 123, 123);
+}
+
 .outset-box .concept {
+     font-family: system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
      flex: 1 1 300px;
      color: #000;
      font-size: 27px;
@@ -299,8 +369,9 @@ header {
 }
 
 .form-title h2 {
-     max-width: 700px;
-     text-align: left;
+     /* max-width: 200px;*/
+     color: #fff;
+     text-align: center;
      font-weight: bold;
      font-size: 30px;
      padding-top: 20px;
@@ -324,11 +395,21 @@ header {
      width: 90%;
      height: 56px;
      display: block;
-     margin: 20px auto;
+     margin: 10px auto;
      padding: 10px;
      box-sizing: border-box;
      border: none;
      border-radius: 8px;
+     cursor: pointer;
+     outline: none;
+}
+
+.box input[type="text"]:focus,
+.box input[type="email"]:focus,
+textarea:focus {
+     transition: 0.25s;
+     width: 280px;
+     border-color: #f05454;
 }
 
 .box textarea {
@@ -562,7 +643,7 @@ header {
      font-weight: 600;
      transform: translateY(-2px);
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-     color: #fff;
+     color: #fff !important;
      transition: all 0.3s ease;
 }
 
@@ -696,6 +777,72 @@ header {
      font-weight: bold;
      color: #096a6a;
 }
+
+/* Registrační balíček + registrační formulář */
+.register-box {
+     max-width: 100%;
+     height: auto;
+     margin-top: 110px;
+     margin-bottom: 70px;
+     padding: 30px 20px;
+     background: #fff;
+     border-radius: 20px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.heading-register h2 {
+     text-align: center;
+}
+
+.heading-register h5 {
+     color: #096a6a;
+     text-align: left;
+     font-family: monospace, sans-serif;
+     font-size: 1.2em;
+     font-weight: 600;
+     letter-spacing: 1.5px;
+     word-spacing: 1.5px;
+}
+
+.heading-register p {
+     font-family: monospace, sans-serif;
+     font-size: 1em;
+     color: #333;
+     letter-spacing: 1px;
+     margin-top: 20px;
+}
+
+.fa-circle-right {
+     color: #096a6a;
+}
+
+.btn-register .button {
+     display: inline-block;
+     color: #fff;
+     text-decoration: none !important;
+     font-size: 20px;
+     border: 1px solid rgb(24, 110, 110);
+     border-radius: 10px;
+     padding: 5px 10px;
+     margin-top: 7px;
+     letter-spacing: 1px;
+     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.button {
+     background: rgb(70, 148, 148);
+     font-weight: 600;
+}
+
+.button:hover {
+     background: rgb(54, 111, 111);
+     font-weight: 600;
+     transform: translateY(-2px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     color: #fff !important;
+     transition: all 0.3s ease;
+}
+
 
 /* Partnerské e-shopy*/
 .heading-main p {
@@ -1529,6 +1676,12 @@ details[open] summary::after {
      font-weight: bold;
 }
 
+.button-cookiefull:hover {
+     background: rgb(220, 230, 30);
+     color: #000 !important;
+     font-weight: 600;
+}
+
 .button-cookieempty {
      border: 1px solid rgb(220, 230, 30);
      background: transparent;
@@ -1539,13 +1692,20 @@ details[open] summary::after {
      cursor: pointer;
 }
 
+.button-cookieempty:hover {
+     background: rgb(220, 230, 30);
+     color: #000 !important;
+     font-weight: 600;
+}
+
+
 .button-cookieempty a {
      text-decoration: none !important;
      color: #fff;
 }
 
 .button-cookieempty a:hover {
-     color: #fff;
+     color: #000 !important;
 }
 
 /* šipka */

@@ -196,6 +196,8 @@
           width: 100%;
           font-size: 20px;
      }
+
+
 }
 
 /* Mobilní verze - hamburgerMenu -- O mně, Blog, FAQ, zásady ochrany, cookies */
@@ -403,7 +405,7 @@
      }
 
      .heading-main h2 {
-          font-size: 150% !important;
+          font-size: 25px !important;
      }
 
      .outset h2 {
@@ -481,19 +483,29 @@
           margin: 10px;
           background: #096a6a;
      }
+
+     .clean-lister ul {
+          grid-template-columns: 1fr !important;
+          /* Na mobilu se vrátí k jednomu sloupci */
+          padding: 10px;
+     }
 }
 
 @media screen and (max-width: 420px) {
      p {
-          font-size: 14px !important;
+          font-size: 15px !important;
      }
 
      a {
           font-size: 15px !important;
      }
 
+     .article h1 {
+          font-size: 23px;
+     }
+
      .heading-main h2 {
-          font-size: 17px !important;
+          font-size: 25px !important;
      }
 
      .heading-main i {
