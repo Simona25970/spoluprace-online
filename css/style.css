@@ -383,8 +383,8 @@ header {
      background: rgb(24, 110, 110);
      flex: 0 1 500px;
      width: 100%;
-     max-width: 500px;
-     height: 200px;
+     max-width: 800px;
+     height: 600px;
      min-height: 550px;
      padding-top: 20px;
      box-sizing: border-box;
@@ -448,24 +448,31 @@ textarea:focus {
      /* Mezera nad a pod celým prvkem */
      text-align: left;
      /* Zajistí zarovnání textu doleva */
+     cursor: pointer;
+     user-select: none;
 }
 
 .protection-container input[type="checkbox"] {
-     width: 18px;
+     width: 25px;
      /* Fixní šířka čtverečku, aby se nezmenšoval */
-     height: 18px;
+     height: 30px;
+     min-width: 25px;
      margin-top: 2px;
      margin-left: 2%;
      /* Jemné doladění výšky čtverečku k textu */
      cursor: pointer;
+     z-index: 10;
+     touch-action: manipulation;
 }
 
 .protection-container label {
+     display: inline-block;
      font-size: 13px;
      /* O něco menší písmo, aby se text na mobilu lépe vešel */
      line-height: 1.4;
      /* Příjemnější mezery mezi řádky textu */
      cursor: pointer;
+     touch-action: manipulation;
 }
 
 /* Nastavení barvy odkazu uvnitř kontejneru se souhlasem */
@@ -784,7 +791,7 @@ textarea:focus {
      height: auto;
      margin-top: 110px;
      margin-bottom: 70px;
-     padding: 30px 20px;
+     padding: 30px 80px;
      background: #fff;
      border-radius: 20px;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -792,11 +799,14 @@ textarea:focus {
 
 .heading-register h2 {
      text-align: center;
+     font-size: 2.2em;
+     text-decoration: underline;
 }
 
 .heading-register h5 {
      color: #096a6a;
      text-align: left;
+     margin-top: 40px;
      font-family: monospace, sans-serif;
      font-size: 1.2em;
      font-weight: 600;
@@ -804,16 +814,33 @@ textarea:focus {
      word-spacing: 1.5px;
 }
 
+.register-box ul {
+     list-style: square;
+     max-width: 900px;
+     margin: 0 auto;
+     line-height: 1.8;
+}
+
+.register-box p {
+     margin-top: 30px;
+     font-weight: 600;
+     font-size: 1.1em;
+     padding-left: 2%;
+     letter-spacing: 1px;
+}
+
 .heading-register p {
      font-family: monospace, sans-serif;
-     font-size: 1em;
+     font-weight: 600;
+     margin-top: 50px;
+     font-size: 1.3em;
      color: #333;
      letter-spacing: 1px;
-     margin-top: 20px;
 }
 
 .fa-circle-right {
      color: #096a6a;
+     font-size: 20px;
 }
 
 .btn-register .button {

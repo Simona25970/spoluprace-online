@@ -255,10 +255,11 @@
                          <div class="form-title column">
                               <h2>Kontaktní formulář</h2>
                          </div>
-                         <form id="contact-form" action="mailer.php" method="post" class="box">
+                         <form id="contact-form" action="https://formspree.io/f/xjgeqdar" method="post" class="box">
                               <input type="text" name="name" placeholder="Jméno a Příjmení:">
                               <input type="email" name="email" placeholder="Email:">
                               <input type="text" name="phone" placeholder="Telefon:">
+                              <input type="hidden" name="_next" value="https://spolupraceonline.info/dekuji.html">
                               <textarea name="text" placeholder="Vaše zpráva" name="message" cols="80"
                                    rows="8"></textarea><br>
 
@@ -269,12 +270,11 @@
 
                               <div class="protection-container">
                                    <input type="checkbox" id="souhlas" name="podminky" value="ano" required>
-                                   <label for="souhlas">
-                                        Souhlasím se <a href="./zasady-ochrany-osobnich-udaju.html" target="_blank">
+                                   <label for="souhlas"> Souhlasím se <a href="./zasady-ochrany-osobnich-udaju.html"
+                                             target="_blank">
                                              zpracováním osobních údajů</a> za účelem [vyřízení registrace].
                                    </label>
                               </div>
-
                          </form>
                     </section>
 
