@@ -17,37 +17,7 @@
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
-<script>
 
-     const form = document.getElementById("contact-form");
-     const message = document.getElementById("form-message");
-
-     form.addEventListener("submit", async function (e) {
-
-          e.preventDefault();
-
-          message.innerHTML = "Odesílám zprávu...";
-
-          const data = new FormData(form);
-
-          const response = await fetch(form.action, {
-               method: "POST",
-               body: data,
-               headers: {
-                    'Accept': 'application/json'
-               }
-          });
-
-          if (response.ok) {
-               message.innerHTML = "✅ Děkuji za zprávu. Ozvu se vám co nejdříve.";
-               form.reset();
-          } else {
-               message.innerHTML = "❌ Odeslání se nepovedlo. Zkuste to prosím znovu.";
-          }
-
-     });
-
-</script>
 
 <body>
      <header>
@@ -255,18 +225,16 @@
                          <div class="form-title column">
                               <h2>Kontaktní formulář</h2>
                          </div>
-                         <form id="contact-form" action="https://formspree.io/f/xjgeqdar" method="post" class="box">
+                         <form id="contact-form" action="mailer.php" method="post" class="box">
                               <input type="text" name="name" placeholder="Jméno a Příjmení:">
                               <input type="email" name="email" placeholder="Email:">
                               <input type="text" name="phone" placeholder="Telefon:">
-                              <input type="hidden" name="_next" value="https://spolupraceonline.info/dekuji.html">
-                              <textarea name="text" placeholder="Vaše zpráva" name="message" cols="80"
-                                   rows="8"></textarea><br>
+                              <input type="hidden" name="text" value="https://spolupraceonline.info/dekuji.html">
 
-                              <!-- antispam pole -->
-                              <input type="text" name="_gotcha" style="display:none">
+                              <textarea name="message" placeholder="Vaše zpráva" cols="80" rows="8"></textarea>
+
                               <strong><input type="submit" value="Odeslat zprávu"></strong>
-                              <div id="form-message"></div>
+                              <div id="form-message" class="form-message"></div>
 
                               <div class="protection-container">
                                    <input type="checkbox" id="souhlas" name="podminky" value="ano" required>
@@ -394,6 +362,7 @@
      <script src="js/script.js"></script>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
 
 </body>

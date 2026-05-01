@@ -384,8 +384,7 @@ header {
      flex: 0 1 500px;
      width: 100%;
      max-width: 800px;
-     height: 600px;
-     min-height: 550px;
+     height: 580px;
      padding-top: 20px;
      box-sizing: border-box;
 }
@@ -546,8 +545,13 @@ textarea:focus {
      font-weight: bold;
 }
 
-#form-message {
+.form-message {
      margin-top: 15px;
+     font-weight: 600;
+}
+
+#form-message {
+     margin-top: 20px;
      opacity: 0;
      transition: opacity 0.5s ease;
 }
@@ -791,7 +795,7 @@ textarea:focus {
      height: auto;
      margin-top: 110px;
      margin-bottom: 70px;
-     padding: 30px 80px;
+     padding: 30px 30px;
      background: #fff;
      border-radius: 20px;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -837,6 +841,7 @@ textarea:focus {
      color: #333;
      letter-spacing: 1px;
 }
+
 
 .fa-circle-right {
      color: #096a6a;

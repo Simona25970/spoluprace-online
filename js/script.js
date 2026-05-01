@@ -140,6 +140,40 @@ window.onload = () => {
 };
 
 
+const form = document.getElementById("contact-form");
+const message = document.getElementById("form-message");
+
+form.addEventListener("submit", async function (e) {
+
+     e.preventDefault();
+
+     message.innerHTML = "Odesílám zprávu...";
+
+     const data = new FormData(form);
+
+     const response = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: {
+               'Accept': 'application/json'
+          }
+     });
+
+     const result = await response.json();
+
+     if (result.success) {
+          message.innerHTML = "✅ " + result.message;
+          message.classList.add("show");
+          form.reset();
+     } else {
+          message.innerHTML = "❌ " + result.message;
+     }
+});
+
+
+
+
+
 (function ($) {
      $(function () {
           /* Scroll to section */

@@ -3,12 +3,14 @@
 $name = strip_tags(trim($_POST["name"]));
 $name = str_replace(array("\r","\n"),array(" "," "),$name);
 $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+$phone = trim($_POST["phone"]);
 $message = trim($_POST["message"]);
 
-// Kontroluje data popř. přesměruje na chybovou adresu
+// Kontroluje data popř. vrátí chybu
 if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-header("Location: http://www.spolupraceonline.info/index.html?success=-1#form");
-exit;
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Chyba při odeslání. Zkuste znovu']);
+    exit;
 }
 
 // Nastavte si email, nakterý chcete, aby se vyplněný formulář odeslal - jakýkoli váš email
@@ -26,21 +28,12 @@ $email_content .= "Zpráva:\n$message\n";
 // Emailová hlavička
 $email_headers = "From: $name <$email>";
 
-     // Odeslání emailu - dáme vše dohromady
-     mail($recipient, $subject, $email_content, $email_headers);
-
-     // Přesměrování na stránku, pokud vše proběhlo v pořádku
-     header("Location:http://www.spolupraceonline.info/index.html?success=1#form");
-
-     ?>
-
-<?php
-if($_GET['success'] == 1){
-     echo"<div class=\"form-result success\">Odeslání proběhlo v pořádku</div>";  
- };
-
-if($_GET['success'] == -1){
-     echo"<div class=\"form-result error\">Chyba při odeslání. Zkuste znovu</div>";
- };
-
+// Odeslání emailu
+if (mail($recipient, $subject, $email_content, $email_headers)) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => true, 'message' => 'Děkuji za zprávu. Ozvu se Vám co nejdříve.']);
+} else {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Odeslání se nepovedlo. Zkuste to prosím znovu.']);
+}
 ?>
