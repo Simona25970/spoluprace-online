@@ -162,7 +162,7 @@ form.addEventListener("submit", async function (e) {
      const result = await response.json();
 
      if (result.success) {
-          message.innerHTML = "✅ " + result.message;
+          message.innerHTML = "⏳ Odesílám zprávu...";
           message.classList.add("show");
           form.reset();
      } else {
